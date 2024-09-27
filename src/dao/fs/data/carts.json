@@ -1,0 +1,32 @@
+[
+  {
+    "id": "2uEbWXbArHWxfkpBHeloF",
+    "products": []
+  },
+  {
+    "id": "C3ki-Qk7yv56dPLz4w2iY",
+    "products": []
+  },
+  {
+    "id": "SHiq0ryk-jMqJcQcvPdYv",
+    "products": [
+      {
+        "product": "XA4mpCZqOUqeBNScfdqcq",
+        "quantity": 10
+      },
+      {
+        "product": "cnb09Pz4laRY0Eym947mV",
+        "quantity": 5
+      }
+    ]
+  },
+  {
+    "id": "-9bWrJGPwUxBrjaRAM2qM",
+    "products": [
+      {
+        "product": "yS2bCm7XwTo5ZnHF_nDc1",
+        "quantity": 1
+      }
+    ]
+  }
+]

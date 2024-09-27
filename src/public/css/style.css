@@ -1,0 +1,15 @@
+* {
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 10px;
+    color:#ffffff;
+    background-color:lightsteelblue;
+}
+
+.card-body{
+    background-color:grey ;
+    color:antiquewhite;
+}

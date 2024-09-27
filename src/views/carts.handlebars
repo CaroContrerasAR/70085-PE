@@ -1,0 +1,27 @@
+<div class="container">
+<h1>Shopping Cart</h1>
+
+  {{#if cart.products.length}}
+        <div class="card-container">
+            {{#each cart.products}}
+                <div class="card" style="width: 18rem">
+                    <img src="{{this.product.img}}" alt="{{this.product.title}}" class="card-img">
+                    <div class="card-body">
+                        <h2 class="card-title">{{this.product.title}}</h2>
+                        <p class="card-description">{{this.product.description}}</p>
+                        <p class="card-price">${{this.product.price}}</p>
+                        <p class="card-code">Code: {{this.product.code}}</p>
+                        <p class="card-stock">Stock: {{this.product.stock}}</p>
+                        <p class="card-category">Category: {{this.product.category}}</p>
+                        <p class="card-quantity">Quantity: {{this.quantity}}</p>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+        <div class="total">
+            <p>Total: ${{totalPrice}}</p>
+        </div>
+    {{else}}
+        <p>Your cart is empty.</p>
+    {{/if}}
+    </div>

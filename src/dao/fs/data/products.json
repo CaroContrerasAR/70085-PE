@@ -1,0 +1,82 @@
+[
+  {
+    "title": "first product",
+    "description": "description of product1",
+    "code": "P123",
+    "price": 15999,
+    "status": true,
+    "stock": 50,
+    "category": "Ca1",
+    "id": "yS2bCm7XwTo5ZnHF_nDc1"
+  },
+  {
+    "title": "second product",
+    "description": "description of product2",
+    "code": "P124",
+    "price": 16999,
+    "status": true,
+    "stock": 50,
+    "category": "Ca2",
+    "id": "XA4mpCZqOUqeBNScfdqcq"
+  },
+  {
+    "title": "thirth product",
+    "description": "description of product3",
+    "code": "P125",
+    "price": 17999,
+    "status": true,
+    "stock": 50,
+    "category": "Ca1",
+    "id": "cnb09Pz4laRY0Eym947mV"
+  },
+  {
+    "title": "fourth product",
+    "description": "description of product4",
+    "code": "P126",
+    "price": 18999,
+    "status": true,
+    "stock": 50,
+    "category": "Ca2",
+    "id": "LgZ7U1xxmp5sNrHHPM6z7"
+  },
+  {
+    "title": "fifth product",
+    "description": "description of product5",
+    "code": "P127",
+    "price": 19999,
+    "status": true,
+    "stock": 50,
+    "category": "Ca1",
+    "id": "Z3ji9BMOtTSv-2YVPG1jr"
+  },
+  {
+    "title": "sixth product",
+    "description": "description of product6",
+    "code": "P128",
+    "price": 20999,
+    "status": true,
+    "stock": 50,
+    "category": "Ca2",
+    "id": "KHnoDE6WQZuCVihRJQnvO"
+  },
+  {
+    "title": "seventh product",
+    "description": "description of product7",
+    "code": "P129",
+    "price": 21999,
+    "status": true,
+    "stock": 50,
+    "category": "Ca1",
+    "id": "CfJd1wlbmrHNBHW50G6x3"
+  },
+  {
+    "title": "8vp",
+    "description": "8vo",
+    "code": "8vo",
+    "price": 8,
+    "stock": 8,
+    "category": "8",
+    "thumbnail": "",
+    "id": "oGG1Co1XqYG5EAjnZMsGt"
+  }
+]

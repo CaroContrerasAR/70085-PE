@@ -1,0 +1,41 @@
+
+<div class="container">
+  <h1>Products List</h1>
+
+  <div class="card">
+    {{#each products}}
+    <div class="col-md-4">
+          <div class="card" style="width: 18rem;">
+                {{#if thumbnail}}
+                <img src="{{thumbnail}}" class="card-img-top" alt="{{title}}">
+                {{/if}}
+                    <div class="card-body">
+                      <h5 class="card-title">{{title}}</h5>
+                      <p class="card-text">{{description}}</p>
+                      <p class="card-text">Price: ${{price}}</p>
+                      <p class="card-text">Category: {{category}}</p>
+                      <p class="card-text">Stock: {{stock}}</p>
+                      <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                    </div>
+          </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="pagination">
+    {{#if prevLink}}
+    <a href="{{prevLink}}" class="btn btn-secondary">Previous</a>
+    {{else}}
+    <button class="btn btn-secondary" disabled>Previous</button>
+    {{/if}}
+  
+    <span>Page {{currentPage}} of {{totalPages}}</span>
+  
+    {{#if nextLink}}
+    <a href="{{nextLink}}" class="btn btn-secondary">Next</a>
+    {{else}}
+    <button class="btn btn-secondary" disabled>Next</button>
+    {{/if}}
+  </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/products.js"></script>

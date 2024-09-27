@@ -1,0 +1,62 @@
+<div class="container"> 
+  <h2 style="text-align: center; margin-bottom: 50px;">{{title}}</h2>
+
+    <div class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">title</th>
+              <th scope="col">description</th>
+              <th scope="col">price</th>
+              <th scope="col">stock</th>
+              <th scope="col">thumbnail</th>
+            </tr>
+          </thead>
+            <tbody id="tabla">
+
+            </tbody>
+        </table>
+
+    </div>
+        <h2 style="text-align: center; margin-top: 50px;">Add Products</h2>
+    <div class="container containerHorizontal">
+        
+        
+        <form action="http://localhost:8080/realtimeproducts" method="POST">
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="title" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">description</label>
+            <input type="text" name="description" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="code" class="form-label">code</label>
+            <input type="text" name="code" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">price</label>
+            <input type="number" name="price" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="stock" class="form-label">stock</label>
+            <input type="number" name="stock" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="category" class="form-label">category</label>
+            <input type="text"  name="category" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="thumbnail" class="form-label">thumbnail</label>
+            <input type="text"  name="thumbnail" class="form-control" >
+          </div>
+          <button type="submit" class="btn btn-primary" id="btnCreateP">Submit</button>
+        </form>
+    </div>
+    
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/main.js"></script>

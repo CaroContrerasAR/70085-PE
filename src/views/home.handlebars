@@ -1,0 +1,39 @@
+<div class="container">
+
+    <h1>Products List</h1>
+
+    <table class="table">
+  <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">title</th>
+        <th scope="col">description</th>
+        <th scope="col">price</th>
+        <th scope="col">status</th>
+        <th scope="col">category</th>
+        <th scope="col">code</th>
+        <th scope="col">stock</th>
+        <th scope="col">thumbnail</th>
+    </tr>
+  </thead>
+  <tbody>
+            {{#each products}}
+        <tr>
+            <td>{{_id}}</td>
+            <td>{{title}}</td>
+            <td>{{description}}</td>
+            <td>{{price}}</td>
+            <td>{{status}}</td>
+            <td>{{category}}</td>
+            <td>{{code}}</td>
+            <td>{{stock}}</td>
+            <td><button type="button" class="btn btn-primary">Detail</button></td>
+            {{#thumbnail}}
+                <td> <img style="width: 40px; height: 40px;" src={{this}}>  </td>
+            {{/thumbnail}}
+        </tr>
+            {{/each}}
+  </tbody>
+</table>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/main.js"></script>
