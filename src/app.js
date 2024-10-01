@@ -1,3 +1,6 @@
+//mongoUrl: 'mongodb+srv://acccarolina:qSDoqtjEi0cl76v2@cluster0.5cwsly0.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=Cluster0',
+//mongoUrl: 'mongodb+srv://<usuario>:<password>@cluster0.5cwsly0.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=Cluster0',
+//- Carolina Contrerasnpm i pasp
 import express from 'express'
 //import mongoose from 'mongoose'
 import { engine } from 'express-handlebars'
@@ -10,12 +13,14 @@ import './db.js'
 import productRouter from './routes/products.routes.js'
 import cartRouter from './routes/carts.routes.js'
 import viewsRouter from './routes/views.routes.js'
-import sessionRouter from './routes/views.routes.js'
+import sessionRouter from './routes/session.router.js'
 import initializePassport from './config/passport.config.js'
-
+//import generateToken from './utils/jsonwentoken.js'
+import jwt from 'jsonwebtoken'
+import {passportCall, authorization} from './utils/util.js'
 
 //fs
-//import ProductManager from './dao/fs/conproductsManager.controller.js'
+//import ProductManager from './dao/fs/controller/productsManager.controller.js'
 //const manager = new ProductManager('./dao/fs/data/products.json')
 import ProductManager from './dao/db/productsManager.db.js'
 const manager = new ProductManager()
@@ -38,15 +43,31 @@ app.use(session({
     resave: true,
     saveUninitialized: true,
     store: MongoStore.create({
-        mongoUrl: 'mongodb+srv://acccarolina:qSDoqtjEi0cl76v2@cluster0.5cwsly0.mongodb.net/Sessiones?retryWrites=true&w=majority&appName=Cluster0',
-        ttl: 15
+        mongoUrl: 'mongodb+srv://acccarolina:qSDoqtjEi0cl76v2@cluster0.5cwsly0.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=Cluster0',
+        ttl: 150
     })
 }))
 
 //Rutas
-app.get('/',(req,res)=>{
-        res.send(`<h1>PE Backend II - Carolina Contreras</h1>`)
+// app.get('/',(req,res)=>{
+//         res.send(`<h1> PE Backend II - Carolina Contreras </h1>`)
+// })
+app.post('/login', (req,res)=>{
+    let {usuario, pass}=req.body
+    if(usuario==='tinki'&& pass==='winki'){
+        //let token = generateToken({usuario, pass})
+        let token = jwt.sign({usuario, pass, role:"admin"}, "coderhouse", {expiresIn: "24h"});
+        //res.send({message:'login exitoso oso!', token})
+        //enviamos desde cookies
+        res.cookie('coderCookieToken',token,{
+            maxAge:60*60*1000, //represnta 1 hora en milisegundos
+            httpOnly:true //solo se accede desde el protocolo HTTP
+        }).send({message:'login exitoso!!'})
+    } else {
+        res.send('no coincide nada!!')
+    }
 })
+
 
 //cambios con passport
 initializePassport()
@@ -58,7 +79,15 @@ app.use('/api/carts', cartRouter)
 app.use('/api/sessions', sessionRouter)
 app.use('/', viewsRouter)
 
+//creamos la ruta 'current'
+// app.get('/current', passport.authenticate('jwt',{session: false}) ,(req, res) => {
+//     res.send(req.user)
+// })
 
+// //usando el PassportCall
+// app.get('/current', passportCall('jwt'), authorization('user') ,(req, res) => {
+//     res.send(req.user)
+// })
     
 //Listen
 const httpServer = app.listen(PORT, () => {
